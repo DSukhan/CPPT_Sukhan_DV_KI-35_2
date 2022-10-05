@@ -2,9 +2,9 @@ Fuse is changed to [turn off state]
 Push is changed to [turn on state]
 Shot
 Pistol model (Glock)
-Made in company (American.Weapons.inc.)
-Caliber(7.62)
-Shoot range(1.2)
+Made in company (American.WEAPONS.inc.)
+Caliber(7.65)
+Shoot range(1.5)
 Current bullets(14)
 Catrige capacity(15)
 
@@ -13,9 +13,9 @@ Shot
 Push is changed to [turn on state]
 Shot
 Pistol model (Glock)
-Made in company (American.Weapons.inc.)
-Caliber(7.62)
-Shoot range(1.2)
+Made in company (American.WEAPONS.inc.)
+Caliber(7.65)
+Shoot range(1.5)
 Current bullets(12)
 Catrige capacity(15)
 
@@ -23,17 +23,17 @@ Cartridge capacity was changed to :25
 Push is changed to [turn on state]
 Shot
 Pistol model (Glock)
-Made in company (American.Weapons.inc.)
-Caliber(7.62)
-Shoot range(1.2)
+Made in company (American.WEAPONS.inc.)
+Caliber(7.65)
+Shoot range(1.5)
 Current bullets(24)
 Catrige capacity(25)
 
 The gun is reloaded !
 Pistol model (Glock)
-Made in company (American.Weapons.inc.)
-Caliber(7.62)
-Shoot range(1.2)
+Made in company (American.WEAPONS.inc.)
+Caliber(7.65)
+Shoot range(1.5)
 Current bullets(25)
 Catrige capacity(25)
 

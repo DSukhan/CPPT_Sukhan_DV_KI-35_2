@@ -1,6 +1,14 @@
 package KI35.Sukhan.Lab3;
 import java.io.*;
 import java.util.Scanner;
+/**
+* Клас Pistol реалізує програму-драйвер до пістолета
+*
+* @author Denys Sukhan
+* @version 1.0
+* @since version 1.0
+*
+*/
 public class PistolAPP 
 {
   public static void main(String[] args) throws FileNotFoundException

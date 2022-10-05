@@ -18,6 +18,9 @@ import java.io.*;
         private String model,company;
         private double caliber,shoot_range;
     
+          /* Constructor
+           * @throws FileNotFoundException
+          */ 
     
         public Pistol() throws FileNotFoundException {
             model ="Desert Eagle";
@@ -30,7 +33,12 @@ import java.io.*;
             cartridge = new Cartridge();
             fout = new PrintWriter(new File("KI35/Sukhan/Lab3/MyFile.txt"));
         }
-    
+           
+        /* Constructor
+         * @param model - модель пістолета       * @param  caliber - калібр пістолета       * @param  sight - приціл
+         * @param company - коспанія виробник    * @param  shoot_range - дальність пострілу * @param  flashlight - ліхтарик
+         * @throws FileNotFoundException         * @param  laser - лазер       
+        */ 
         public Pistol(String model,String company,double caliber,double shoot_range,boolean laser,boolean sight, boolean flashlight) throws FileNotFoundException {
             this.model =model;
             this.company=company;
@@ -42,7 +50,10 @@ import java.io.*;
             cartridge = new Cartridge();
             fout = new PrintWriter(new File("KI35/Sukhan/Lab3/MyFile.txt"));
         }
-
+          
+        /**
+          * Method змінює положення запобіжника
+        */
         public void change_fuse_state(){
          fuse = fuse==false? true:false;
          if(fuse){
@@ -56,7 +67,10 @@ import java.io.*;
                 fout.flush();
             }
         }
-
+        
+        /**
+          * Method змінює положення курка
+        */
         public void change_push_state(){
            boolean push = trigger.get_push();
            trigger.set_push(!push);
@@ -72,7 +86,10 @@ import java.io.*;
                }
              
            }
-        
+         
+        /**
+          * Method виконує постріл
+        */
         public void shoot(){
             boolean push = trigger.get_push();
             int cur_bullets = cartridge.get_cur_bullets();
@@ -90,6 +107,9 @@ import java.io.*;
             }
         }
         
+        /**
+          * Method перезаряджає обойму
+        */
         public void reload(){
             int cur_bullets = cartridge.get_cur_bullets();
             int max_bullets = cartridge.get_max_bullets();
@@ -105,6 +125,10 @@ import java.io.*;
                fout.flush();
             }
         }
+        
+        /**
+          * Method змінює комплектування лазером
+        */
         public void switch_laser(){
             boolean laser = equipment.get_laser();
             System.out.println(laser==false? "Laser is [turned on] ": "Laser is [turned on]");
@@ -112,7 +136,10 @@ import java.io.*;
             fout.flush();
             equipment.set_laser(!laser);
         }
-
+        
+        /**
+          * Method змінює комплектування прицілом
+        */
         public void switch_sight(){
             boolean sight = equipment.get_sight();
             System.out.println(sight==false? "Sight is [turned on] ": "Sight is [turned on]");
@@ -120,7 +147,10 @@ import java.io.*;
             fout.flush();
             equipment.set_sight(!sight);
         }
-
+         
+        /**
+          * Method змінює комплектування ліхтариком
+        */
         public void switch_flashlight(){
             boolean flashlight = equipment.get_flashlight();
             System.out.println(flashlight==false? "Flashlight is [turned on] ": "Flashlight is [turned on]");
@@ -128,7 +158,10 @@ import java.io.*;
             fout.flush();
             equipment.set_flashlight(!flashlight);
         }
-
+  
+        /**
+          * Method об'єм магазина патронів
+        */
         public void change_cartridge_capacity(int capacity){
             cartridge.set_max_bullets(capacity);
             cartridge.set_cur_bullets(capacity);
@@ -137,6 +170,9 @@ import java.io.*;
             fout.flush();
         }
         
+        /**
+          * Method виводить інформацію про пістолет
+        */
         public void get_info(){
             System.out.println("Pistol model (" + model+")\nMade in company (" + company+")\nCaliber(" + caliber+")\nShoot range(" + shoot_range+")\nCurrent bullets(" + cartridge.get_cur_bullets()+")\nCatrige capacity(" + cartridge.get_max_bullets()+")\n");
             fout.println("Pistol model (" + model+")\nMade in company (" + company+")\nCaliber(" + caliber+")\nShoot range(" + shoot_range+")\nCurrent bullets(" + cartridge.get_cur_bullets()+")\nCatrige capacity(" + cartridge.get_max_bullets()+")\n");
@@ -148,6 +184,9 @@ import java.io.*;
 
     class Trigger{
         private boolean push;
+         /* 
+          * Constructor
+         */ 
         public Trigger(){
             push = false;
         } 
@@ -163,12 +202,19 @@ import java.io.*;
 
     class Equipment{
           private boolean laser,sight,flashlight;
+           /* 
+            * Constructor
+           */ 
           public Equipment(){
             laser=false;
             sight=false;
            flashlight=false;
           }
-
+            /* Constructor
+            * @param  shoot_range - дальність пострілу 
+            * @param  flashlight - ліхтарик
+            * @param  laser - лазер     
+            */ 
           public Equipment(boolean laser,boolean sight, boolean flashlight){
             this.laser=laser;
             this.sight=sight;
@@ -199,6 +245,9 @@ import java.io.*;
     class Cartridge {
         private int max_bullets;
         private int cur_bullets;
+        /* 
+        * Constructor
+        */
         public Cartridge(){
           max_bullets = 15;
           cur_bullets= max_bullets;
