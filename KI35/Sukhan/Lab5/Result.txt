@@ -1,0 +1,5 @@
+Result: 0.8446104334095649
+Result: 0.18967882364931632
+Result: 0.8446104334095649
+Result: -0.0012187172797260464
+Exception reason: Illegal value of X for tangent calculation
